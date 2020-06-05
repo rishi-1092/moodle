@@ -4,21 +4,21 @@ unset($CFG);
 global $CFG;
 $CFG = new stdClass();
 
-$CFG->dbtype    = getenv('mysql');
+$CFG->dbtype    = getenv('pgsql');
 $CFG->dblibrary = 'native';
-$CFG->dbhost    = getenv('127.0.0.1');
-$CFG->dbname    = getenv('moodle');
-$CFG->dbuser    = getenv('o-class-admin');
-$CFG->dbpass    = getenv('oclassadmin');
+$CFG->dbhost    = getenv('localhost');
+$CFG->dbname    = getenv('oclass');
+$CFG->dbuser    = getenv('postgres');
+$CFG->dbpass    = getenv('postgres');
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
-  'dbport' => getenv('3306'),
+  'dbport' => getenv('5432'),
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = getenv('WWWROOT');
-$CFG->dataroot  = getenv('DATAROOT');
+$CFG->wwwroot   = getenv('http://o-class.herokuapp.com');
+$CFG->dataroot  = getenv('/tmp');
 $CFG->admin     = 'admin';
 
 $CFG->directorypermissions = 0777;
